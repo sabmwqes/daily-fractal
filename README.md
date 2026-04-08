@@ -16,17 +16,6 @@
 - 生成画像を `docs/daily.png` に保存し、自動コミット
 - **GitHub Pages**（`docs/` フォルダ）で静的配信
 
-## フラクタルの種類
-
-| 種類 | 漸化式 |
-|------|--------|
-| Polynomial | `z^p + c` (p = 2〜5) |
-| BurningShip | `(|Re(z)| + i|Im(z)|)^p + c` |
-| TrigMix | `z^p + a*sin(z) + c` |
-| Cosine | `c * cos(z)` |
-
-モード: Julia set（c固定）または Mandelbrot（z₀=0）がランダムに選択されます。
-
 ## ローカル実行
 
 ```bash
