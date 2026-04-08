@@ -39,25 +39,12 @@ python test_generate.py
 4. 保存後、以下のURLでアクセス可能:
 
 ```
-https://<USER>.github.io/daily-fractal/daily.png
+https://sabmwqes.github.io/daily-fractal/daily.png
 ```
 
 README内の画像URLも上記に差し替えると、外部からも表示されます:
 
 ```markdown
-![daily fractal](https://<USER>.github.io/daily-fractal/daily.png)
+![daily fractal](https://sabmwqes.github.io/daily-fractal/daily.png)
 ```
 
-## ディレクトリ構成
-
-```
-daily-fractal/
-├── generate.py              # フラクタル生成スクリプト
-├── test_generate.py         # テストスクリプト（複数日分生成・再現性確認）
-├── requirements.txt         # Python依存パッケージ
-├── docs/
-│   ├── index.html           # GitHub Pages トップページ
-│   └── daily.png            # 生成画像（自動更新）
-└── .github/workflows/
-    └── generate.yml         # GitHub Actions ワークフロー
-```
