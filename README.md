@@ -30,11 +30,13 @@ python generate.py 20260101
 # テスト（複数日分を一括生成）
 python test_generate.py
 ```
+# GitHub Pages で配信 
 
-# markdown で表示
 ```
 https://sabmwqes.github.io/daily-fractal/daily.png
 ```
+
+# markdown で表示
 
 ```markdown
 ![daily fractal](https://sabmwqes.github.io/daily-fractal/daily.png)
