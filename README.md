@@ -12,7 +12,7 @@
 ## 仕組み
 
 - **GitHub Actions** が毎日 cron で `generate.py` を実行
-- 日付（YYYYMMDD）+ 試行回数(NNN) を乱数seedとして、制約付きランダムパラメータでフラクタルを生成
+- 日付（YYYYMMDD）+ 試行回数（NNN）を乱数seedとして、制約付きランダムパラメータでフラクタルを生成
 - 生成画像を `docs/daily.png` に保存し、自動コミット
 - **GitHub Pages**（`docs/` フォルダ）で静的配信
 
