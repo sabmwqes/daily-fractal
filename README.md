@@ -4,8 +4,7 @@
 
 ## Today's Fractal
 
-<!-- GitHub Pages を有効にしたら、以下のURLを自分のユーザー名/リポジトリ名に書き換えてください -->
-![daily fractal](docs/daily.png)
+[![daily fractal](https://sabmwqes.github.io/daily-fractal/daily.png)](https://sabmwqes.github.io/daily-fractal/)
 
 > 画像は毎日 UTC 20:00（日本時間 05:00）に自動更新されます。同じ日には同じ画像が生成されます。
 
@@ -29,11 +28,6 @@ python generate.py 20260101
 
 # テスト（複数日分を一括生成）
 python test_generate.py
-```
-# GitHub Pages で配信 
-
-```
-https://sabmwqes.github.io/daily-fractal/daily.png
 ```
 
 # markdown で表示
