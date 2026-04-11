@@ -27,13 +27,65 @@
     }
     img { max-width: 100%; height: auto; }
     .container { text-align: center; padding: 1rem; }
-    h1 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+    h1 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+    }
     p { font-size: 0.8rem; color: #888; }
+
+    /* Hypercube icon */
+    .hypercube {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      animation: cube-spin 12s linear infinite, cube-hue 6s linear infinite;
+      filter: drop-shadow(0 0 3px currentColor);
+    }
+    .hypercube.right {
+      animation-direction: reverse, normal;
+    }
+    .hypercube line, .hypercube rect {
+      stroke: #ff6ec7;
+      stroke-width: 1.6;
+      fill: none;
+    }
+
+    @keyframes cube-spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    @keyframes cube-hue {
+      0%   { filter: hue-rotate(0deg)   drop-shadow(0 0 3px currentColor); }
+      50%  { filter: hue-rotate(180deg) drop-shadow(0 0 5px currentColor); }
+      100% { filter: hue-rotate(360deg) drop-shadow(0 0 3px currentColor); }
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Daily Fractal</h1>
+    <h1>
+      <svg class="hypercube" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="36" height="36" rx="1"/>
+        <rect x="10" y="10" width="20" height="20" rx="1"/>
+        <line x1="2"  y1="2"  x2="10" y2="10"/>
+        <line x1="38" y1="2"  x2="30" y2="10"/>
+        <line x1="2"  y1="38" x2="10" y2="30"/>
+        <line x1="38" y1="38" x2="30" y2="30"/>
+      </svg>
+      Today's Image
+      <svg class="hypercube right" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="36" height="36" rx="1"/>
+        <rect x="10" y="10" width="20" height="20" rx="1"/>
+        <line x1="2"  y1="2"  x2="10" y2="10"/>
+        <line x1="38" y1="2"  x2="30" y2="10"/>
+        <line x1="2"  y1="38" x2="10" y2="30"/>
+        <line x1="38" y1="38" x2="30" y2="30"/>
+      </svg>
+    </h1>
     <img src="daily.png" alt="Today's Fractal">
     <p>Updated daily via GitHub Actions</p>
   </div>
