@@ -1,0 +1,40 @@
+name: Save Best Fractal
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  save:
+    if: github.actor == github.repository_owner
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Save daily fractal to gallery
+        run: |
+          if [ ! -f docs/daily.png ]; then
+            echo "docs/daily.png が見つかりません"
+            exit 1
+          fi
+
+          target_date="$(TZ=Asia/Tokyo date +%Y-%m-%d)"
+
+          echo "TARGET_DATE=${target_date}" >> "$GITHUB_ENV"
+
+          mkdir -p best_fractals_gallery
+          cp docs/daily.png "best_fractals_gallery/${target_date}.png"
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add best_fractals_gallery/*.png
+          git diff --staged --quiet && echo "No changes" && exit 0
+          git commit -m "Save best fractal ${TARGET_DATE}"
+          git push
